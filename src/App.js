@@ -32,7 +32,7 @@ const App = () => {
       <div>
         <input
           type="text"
-          placeholder="Enter a word"
+          placeholder="Search for a word..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
