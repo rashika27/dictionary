@@ -20,9 +20,23 @@ const App = () => {
     );
 
     if (foundWord) {
-      setSearchResult(`Definition: ${foundWord.meaning}`);
+      setSearchResult(
+        <div>
+          <p>
+            <strong>Definition:</strong>
+          </p>
+          <p>{foundWord.meaning}</p>
+        </div>,
+      );
     } else {
-      setSearchResult("Word not found in the dictionary.");
+      setSearchResult(
+        <div>
+          <p>
+            <strong>Definition:</strong>
+          </p>
+          <p>Word not found in the dictionary.</p>
+        </div>,
+      );
     }
   };
 
@@ -32,13 +46,13 @@ const App = () => {
       <div>
         <input
           type="text"
-          placeholder="Search for a word..."
+          placeholder="Search for a word"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button onClick={handleSearch}>Search</button>
       </div>
-      <div>{searchResult && <p>{searchResult}</p>}</div>
+      <div>{searchResult && <div>{searchResult}</div>}</div>
     </div>
   );
 };
